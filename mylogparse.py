@@ -18,6 +18,8 @@ inputcsv.close()
 df = pd.read_csv('C:\\Users\Castiel\Desktop\inputcsv.csv')
 df2 = df.groupby(['Date', 'IP', 'State']).size()
 df2.to_csv('C:\\Users\Castiel\Desktop\output.csv', header=["Count"])
+with open('C:\\Users\Castiel\Desktop\output.csv', newline='') as File:
+   print(File.read().replace(',', '\t'))
 
     
 
