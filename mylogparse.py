@@ -1,7 +1,7 @@
 import csv
 import pandas as pd
 
-inputcsv = open('C:\\PycharmProjects\ComcastScript\inputcsv.csv', 'w', encoding = 'utf-8')
+inputcsv = open('C:\\PycharmProjects\ComcastScript\inputcsv.csv', 'w', encoding = 'utf-8') #Cleaning raw_txt to input csv for analysis
 with open("C:\\PycharmProjects\ComcastScript\inputs.txt", 'r') as inputfile:
     input = inputfile.readlines()
     #print(input)
@@ -15,9 +15,9 @@ with open("C:\\PycharmProjects\ComcastScript\inputs.txt", 'r') as inputfile:
         inputcsv.write(csvline + '\n')
 inputfile.close()
 inputcsv.close()
-df = pd.read_csv('C:\\PycharmProjects\ComcastScript\inputcsv.csv')
+df = pd.read_csv('C:\\PycharmProjects\ComcastScript\inputcsv.csv') #Using pandas for analysis of Data
 df2 = df.groupby(['Date', 'IP', 'State']).size()
-df2.to_csv('C:\\PycharmProjects\ComcastScript\output.csv', header=["Count"])
+df2.to_csv('C:\\PycharmProjects\ComcastScript\output.csv', header=["Count"]) #Generating outputfile
 with open('C:\\PycharmProjects\ComcastScript\output.csv', newline='') as File:
    print(File.read().replace(',', '\t'))
 
