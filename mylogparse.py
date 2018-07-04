@@ -1,8 +1,8 @@
 import csv
 import pandas as pd
 
-inputcsv = open('C:\\Users\Castiel\Desktop\inputcsv.csv', 'w', encoding = 'utf-8')
-with open("C:\\Users\Castiel\Desktop\inputs.txt", 'r') as inputfile:
+inputcsv = open('C:\\PycharmProjects\ComcastScript\inputcsv.csv', 'w', encoding = 'utf-8')
+with open("C:\\PycharmProjects\ComcastScript\inputs.txt", 'r') as inputfile:
     input = inputfile.readlines()
     #print(input)
     list = []
@@ -15,10 +15,10 @@ with open("C:\\Users\Castiel\Desktop\inputs.txt", 'r') as inputfile:
         inputcsv.write(csvline + '\n')
 inputfile.close()
 inputcsv.close()
-df = pd.read_csv('C:\\Users\Castiel\Desktop\inputcsv.csv')
+df = pd.read_csv('C:\\PycharmProjects\ComcastScript\inputcsv.csv')
 df2 = df.groupby(['Date', 'IP', 'State']).size()
-df2.to_csv('C:\\Users\Castiel\Desktop\output.csv', header=["Count"])
-with open('C:\\Users\Castiel\Desktop\output.csv', newline='') as File:
+df2.to_csv('C:\\PycharmProjects\ComcastScript\output.csv', header=["Count"])
+with open('C:\\PycharmProjects\ComcastScript\output.csv', newline='') as File:
    print(File.read().replace(',', '\t'))
 
     
