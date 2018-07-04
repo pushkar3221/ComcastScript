@@ -17,9 +17,11 @@ inputfile.close()
 inputcsv.close()
 df = pd.read_csv('C:\\PycharmProjects\ComcastScript\inputcsv.csv') #Using pandas for analysis of Data
 df2 = df.groupby(['Date', 'IP', 'State']).size()
+#print(df2)
 df2.to_csv('C:\\PycharmProjects\ComcastScript\output.csv', header=["Count"]) #Generating outputfile
 with open('C:\\PycharmProjects\ComcastScript\output.csv', newline='') as File:
    print(File.read().replace(',', '\t'))
+File.close()
 
     
 
